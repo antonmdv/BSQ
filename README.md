@@ -1,5 +1,5 @@
 # BSQ
-Will you find the biggest square ?
+Final project for picine(C bootcamp) in 42 silicon valley academy. 
 
 Subject: The biggest square :
 
