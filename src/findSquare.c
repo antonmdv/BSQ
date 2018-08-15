@@ -11,25 +11,29 @@ Square *findSquare(Matrix *mtrx)
 	int j;
 	
 	sq = malloc(sizeof(Square));
+	
 	emptyChar = mtrx->emptyChar;
 	obstacle = mtrx->obstacle;
 	full = mtrx->full;
 	field = mtrx->field;
-	
+
 	i = 0;
 	j = 0;
 	sq->row = 0;
 	sq->col = 0;
 	sq->sideSize = 0;
+	
 
-	while(field[j] != NULL)
+	while(j < mtrx->numOfLines)
 	{
 		i = 0;
-		while(field[j][i] != 10)
+		while(field[j][i] != -1)
 		{
+			//printf("x");
 			
 			if(i == 0 || j == 0)
 				field[j][i] = field[j][i];	
+			
 			else if (field[j][i] != 0)
 			{
 				field[j][i] = 1 + getMin(field[j][i-1],field[j-1][i],field[j-1][i-1]);			
@@ -41,12 +45,13 @@ Square *findSquare(Matrix *mtrx)
 				}
 			}
 			i++;
-		}		
+		}
+		//printf("\n");		
 		j++;
 	}
  	
 	printf("\n\n\n");
-	printMatrix(field);
+	//printMatrix(field);
 	printf("\n\n\n");
 	return (sq);
 }

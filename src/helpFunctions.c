@@ -14,6 +14,17 @@ void put_str(char *str)
 	}
 }
 
+list *newNodeLines(int lines)
+{
+	list *l;
+	l = malloc(sizeof(list));
+
+	l->numLines=lines;
+	l->next = NULL;
+
+	return (l);
+}
+
 list *newNode(char c)
 {
 	list *l;
@@ -42,12 +53,14 @@ list *insertNodeEnd(char c, list *l)
 
 void printList(list *l)
 {
+	printf("%d",l->numLines);
+	
 	while(l->next)
 	{
-		put_char(l->c);
+		printf("%c",l->c);
 		l = l->next;
 	}
-	put_char(l->c);
+	//put_char(l->c);
 }
 
 int getLineLength(list *l)
@@ -69,7 +82,7 @@ void printMatrix(int **field)
 	while (field[j] != NULL)
 	{
 		i = 0;
-		while(field[j][i] != 10)
+		while(field[j][i] != -1)
 		{
 			printf("%d   ", field[j][i]);
 			i++;

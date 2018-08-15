@@ -20,7 +20,7 @@ void printBiggestSquare(int **field, Square *sq)
         while (field[j] != NULL)
         {
                 i = 0;
-                while(field[j][i] != 10)
+                while(field[j][i] != -1)
                 {
 					if(inRange(j, i, row, col, sideSize) == 1)
 						printf("x");

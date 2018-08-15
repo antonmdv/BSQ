@@ -6,6 +6,7 @@ list *importInput(char *fileName)
 	list *l;
 	int  fd;
 	char buff;
+	int num;
 
 	l = NULL;
 
@@ -16,13 +17,24 @@ list *importInput(char *fileName)
 		put_str("open() error\n");
 		return (l);
 	}
+
+	num = 0;
 	
 	while (read(fd, &buff, 1))
 	{
-		if(l == NULL)
-			l = newNode(buff);
+		if(buff >= '0' && buff <= '9')
+		{
+			num *= 10;
+			num +=(buff-48);
+			//printf("\nbuff=%c\n",buff);
+			//printf("\n\nNumLines=>%d \n\n",num);
+		}
 		else
+		{
+			if(l == NULL)
+				l = newNodeLines(num);
 			l = insertNodeEnd(buff,l);		
+		}
 	}
 	//printList(l);
 	close(fd);

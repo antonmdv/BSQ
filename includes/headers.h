@@ -11,6 +11,7 @@
 typedef	struct		list
 {
 	char			c;
+	int				numLines;
 	struct list		*next;
 }					list;
 
@@ -21,7 +22,6 @@ typedef struct		Matrix
 	char			obstacle;
 	char			full;
 	int				**field;
-	char			**fieldToPrint;
 }					Matrix;
 
 typedef struct		Square
@@ -46,4 +46,5 @@ char	**transformToRegular(list *l);
 void	printCharField(char **field);
 void	printBiggestSquare(int **field, Square *sq);
 int		inRange(int j, int i, int row, int col, int sideSize);
+list	*newNodeLines(int lines);
 #endif
