@@ -32,7 +32,7 @@ Square *findSquare(Matrix *mtrx)
 				field[j][i] = field[j][i];	
 			else if (field[j][i] != 0)
 			{
-				field[j][i] = 1 + getMin(field[j][i],field[j][i-1],field[j-1][i],field[j-1][i-1]);			
+				field[j][i] = 1 + getMin(field[j][i-1],field[j-1][i],field[j-1][i-1]);			
 				if(field[j][i] > sq->sideSize)
 				{
 					sq->sideSize = field[j][i];

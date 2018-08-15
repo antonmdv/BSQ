@@ -37,12 +37,12 @@ list	*newNode(char c);
 list	*insertNodeEnd(char c, list *l);
 void	printList(list *l);
 Matrix	*transform(list *l);
-int	getLineLength(list *l);
+int		getLineLength(list *l);
 void	printMatrix(int  **field);
 Square	*findSquare(Matrix *mtrx);
-int	getMin(int a, int b, int c, int d);
+int		getMin(int a, int b, int c);
 char	**transformToRegular(list *l);
 void	printCharField(char **field);
 void	printBiggestSquare(char **field, Square *sq);
-int	inRange(int j, int i, int row, int col, int sideSize);
+int		inRange(int j, int i, int row, int col, int sideSize);
 #endif

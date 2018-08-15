@@ -79,16 +79,13 @@ void printMatrix(int **field)
 	}
 }
 
-int getMin(int a, int  b, int c, int  d)
+int getMin(int a, int  b, int c)
 {
 	int min	= a;
-	if(min >b)
+	if(min > b)
 		min = b;
-
 	if(min > c)
 		min = c;
-	if (min > d)
-		min = d;
 	return min;		
 }
 
