@@ -6,6 +6,7 @@ Matrix *transform(list *l)
 	int row;
 	int col;
 	int **field;
+	//char **fieldToPrint;
 	int lineLength;
 
 	row = -1;	

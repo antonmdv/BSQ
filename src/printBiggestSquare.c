@@ -1,6 +1,6 @@
 #include "headers.h"
 
-void printBiggestSquare(char **field, Square *sq)
+void printBiggestSquare(int **field, Square *sq)
 {
 	int row = sq->row;
 	int col = sq->col;
@@ -12,18 +12,23 @@ void printBiggestSquare(char **field, Square *sq)
 	sideSize = 0;
 	*/
 
+
+
 	int i;
-        int j = 0;
+    int j = 0;
 
         while (field[j] != NULL)
         {
                 i = 0;
-                while(field[j][i] != '\0')
+                while(field[j][i] != 10)
                 {
-			if(inRange(j, i, row, col, sideSize) == 1)
-				put_char('x');
-			else
-                        	put_char(field[j][i]);
+					if(inRange(j, i, row, col, sideSize) == 1)
+						printf("x");
+					else
+						if(field[j][i] == 0)
+							printf("o");
+						else
+                        	printf(".");
                         i++;
                 }
                 printf("\n");

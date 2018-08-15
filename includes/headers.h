@@ -10,25 +10,26 @@
 
 typedef	struct		list
 {
-	char		c;
-	struct list	*next;
-}			list;
+	char			c;
+	struct list		*next;
+}					list;
 
 typedef struct		Matrix
 {
-	int		numOfLines;
-	char		emptyChar;
-	char		obstacle;
-	char		full;
-	int		**field;
-}			Matrix;
+	int				numOfLines;
+	char			emptyChar;
+	char			obstacle;
+	char			full;
+	int				**field;
+	char			**fieldToPrint;
+}					Matrix;
 
 typedef struct		Square
 {
-	int		row;
-	int		col;
-	int		sideSize;
-}			Square;
+	int				row;
+	int				col;
+	int				sideSize;
+}					Square;
 
 list	*importInput(char *fileName);
 void	put_char(char c);
@@ -43,6 +44,6 @@ Square	*findSquare(Matrix *mtrx);
 int		getMin(int a, int b, int c);
 char	**transformToRegular(list *l);
 void	printCharField(char **field);
-void	printBiggestSquare(char **field, Square *sq);
+void	printBiggestSquare(int **field, Square *sq);
 int		inRange(int j, int i, int row, int col, int sideSize);
 #endif
