@@ -43,4 +43,5 @@ void	printbiggestsquare(Matrix *mtrx, Square *sq);
 int		inrange(int j, int i, Square *sq);
 list	*newnodelines(int lines);
 void	printfirstoccurence(Matrix *mtrx);
+int		mapvalidity(list *l);
 #endif

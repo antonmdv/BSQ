@@ -6,7 +6,7 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 21:27:26 by amedvede          #+#    #+#             */
-/*   Updated: 2018/08/15 21:32:03 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/08/15 22:12:32 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,29 @@ int			main(int argc, char **argv)
 		{
 			input = importinput(argv[i]);
 			//if (input == NULL) print error, move to next file;
-			//Check Validity for if(checkMap(input) == 1)
-			mtrx = transform(input);
-			sq = findsquare(mtrx);
-			if (sq->sideSize == 1)
-				printfirstoccurence(mtrx);
+			if(input == NULL)
+			{
+				put_str("map error\n");
+			}
 			else
-				printbiggestsquare(mtrx, sq);
-			put_char('\n');
+			{
+				//Check Validity for if(checkMap(input) == 1)
+				if(mapvalidity(input) == 1)
+				{
+					mtrx = transform(input);
+					sq = findsquare(mtrx);
+					if (sq->sideSize == 1 || sq->sideSize == 0)
+						printfirstoccurence(mtrx);
+					else
+						printbiggestsquare(mtrx, sq);
+				}
+				else
+					put_str("map error\n");
+			}
 			i++;
 		}
 	}
 	else
-		put_str("Invslid number or files\n");
+		put_str("map error\n");
 	return (0);
 }
