@@ -3,7 +3,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 #ifndef FT_H
 # define FT_H
@@ -36,14 +35,11 @@ void	put_char(char c);
 void	put_str(char *str);
 list	*newNode(char c);
 list	*insertNodeEnd(char c, list *l);
-void	printList(list *l);
 Matrix	*transform(list *l);
 int		getLineLength(list *l);
-void	printMatrix(int  **field);
 Square	*findSquare(Matrix *mtrx);
 int		getMin(int a, int b, int c);
 char	**transformToRegular(list *l);
-void	printCharField(char **field);
 void	printBiggestSquare(Matrix *mtrx, Square *sq);
 int		inRange(int j, int i, int row, int col, int sideSize);
 list	*newNodeLines(int lines);

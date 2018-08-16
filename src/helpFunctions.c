@@ -50,19 +50,6 @@ list *insertNodeEnd(char c, list *l)
 
 	return (tmp);
 }
-/*
-void printList(list *l)
-{
-	printf("%d",l->numLines);
-	
-	while(l->next)
-	{
-		printf("%c",l->c);
-		l = l->next;
-	}
-	//put_char(l->c);
-}
-*/
 
 int getLineLength(list *l)
 {
@@ -74,25 +61,6 @@ int getLineLength(list *l)
 	}
 	return (i);	
 }
-/*
-void printMatrix(int **field)
-{
-	int i;
-	int j = 0;
-	
-	while (field[j] != NULL)
-	{
-		i = 0;
-		while(field[j][i] != -1)
-		{
-			printf("%d   ", field[j][i]);
-			i++;
-		}
-		printf("\n");	
-		j++;
-	}
-}
-*/
 
 int getMin(int a, int  b, int c)
 {
@@ -103,25 +71,7 @@ int getMin(int a, int  b, int c)
 		min = c;
 	return min;		
 }
-/*
-void printCharField(char **field)
-{
-	int i;
-        int j = 0;
 
-        while (field[j] != NULL)
-        {
-                i = 0;
-                while(field[j][i] != '\0')
-                {
-                        put_char(field[j][i]);
-                        i++;
-                }
-                printf("\n");
-                j++;
-        }
-}
-*/
 int	inRange(int j, int i, int row, int col, int sideSize)
 {
 	int flag = 0;
@@ -130,9 +80,7 @@ int	inRange(int j, int i, int row, int col, int sideSize)
 	int hMax = col;
 
 	int vMin = row - (sideSize-1);
-	int vMax = row;
-	
-	//printf("\n\nhMin=%d  hMax=%d  vMin=%d vMax=%d\n\n",hMin, hMax, vMin, vMax);
+	int vMax = row;	
 
 	if((j >= vMin && j <= vMax) && (i >= hMin && i <= hMax))
 		flag = 1;	

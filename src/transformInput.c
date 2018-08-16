@@ -11,7 +11,6 @@ Matrix *transform(list *l)
 	row = -1;	
 	mtrx = malloc(sizeof(Matrix));
 	
-	//Fill the inputs;
 	mtrx->numOfLines = l->numLines;
 	l = l->next;
 	mtrx->emptyChar = l->c;
