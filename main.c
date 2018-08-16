@@ -14,11 +14,12 @@ int main(int argc, char **argv)
 		{
 			input = importInput(argv[i]);
 	
-			//Check Validity		
+			//Check Validity for if(checkMap(input) == 1)		
 
 			mtrx = transform(input);				
 		
-			sq = findSquare(mtrx);
+			sq = findsquare(mtrx);
+
 			if(sq->sideSize == 1)
 				printFirstOccurence(mtrx);
 			else 	

@@ -37,7 +37,7 @@ list	*newNode(char c);
 list	*insertNodeEnd(char c, list *l);
 Matrix	*transform(list *l);
 int		getLineLength(list *l);
-Square	*findSquare(Matrix *mtrx);
+Square	*findsquare(Matrix *mtrx);
 int		getMin(int a, int b, int c);
 char	**transformToRegular(list *l);
 void	printBiggestSquare(Matrix *mtrx, Square *sq);
