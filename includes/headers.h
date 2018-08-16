@@ -43,4 +43,5 @@ char	**transformToRegular(list *l);
 void	printBiggestSquare(Matrix *mtrx, Square *sq);
 int		inRange(int j, int i, int row, int col, int sideSize);
 list	*newNodeLines(int lines);
+void	printFirstOccurence(Matrix *mtrx);
 #endif
