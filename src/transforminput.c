@@ -10,77 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers.h"
-
-Matrix		*allocate_matrix(list *l)
+int		mapvalidity(t_list *l)
 {
-	Matrix *mtrx;
+	t_matrix	*mtrx;
+	int		linelength;
 
+	linelength = 0;
 	mtrx = malloc(sizeof(Matrix));
 	mtrx->numOfLines = l->numLines;
 	l = l->next;
+	if (mtrx->numOfLines <= 0)
+		return (0);
 	mtrx->emptyChar = l->c;
 	l = l->next;
 	mtrx->obstacle = l->c;
 	l = l->next;
 	mtrx->full = l->c;
-	mtrx->field = (int **)malloc((sizeof(int **) * mtrx->numOfLines) + 1);
-	mtrx->field[mtrx->numOfLines] = NULL;
-	return (mtrx);
-}
-
-list		*skip_to_valid(list *l)
-{
-	int i;
-
-	i = 0;
-	while (i < 4)
-	{
-		l = l->next;
-		i++;
-	}
-	return (l);
-}
-
-Matrix		*allocate_new_line_in_mtrx(Matrix *mtrx, list *l, int row)
-{
-	int linelength;
-
-	linelength = getlinelength(l);
-	mtrx->field[row] = (int *)malloc((sizeof(int) * linelength) + 1);
-	if (l->c == mtrx->obstacle)
-		mtrx->field[row][0] = 0;
-	else
-		mtrx->field[row][0] = 1;
-	mtrx->field[row][linelength] = -1;
-	return (mtrx);
-}
-
-Matrix		*transform(list *l)
-{
-	Matrix	*mtrx;
-	int		row;
-	int		col;
-
-	row = -1;
-	mtrx = allocate_matrix(l);
-	l = skip_to_valid(l);
+	l = l->next;
 	while (l->next)
 	{
-		if (l->c == '\n')
+		if (l->c != '\n' && l->c != mtrx->emptyChar &&
+				l->c != mtrx->obstacle && l->c != mtrx->full)
+			return (0);
+		if (linelength == 0)
 		{
 			l = l->next;
-			col = 0;
-			mtrx = allocate_new_line_in_mtrx(mtrx, l, ++row);
+			linelength = getlinelength(l);
+		}
+		else if (l->c == '\n')
+		{
+			l = l->next;
+			if (linelength != getlinelength(l))
+				return (0);
 		}
 		else
-		{
-			if (l->c == mtrx->obstacle)
-				mtrx->field[row][++col] = 0;
-			else
-				mtrx->field[row][++col] = 1;
-		}
-		l = l->next;
+			l = l->next;
 	}
-	return (mtrx);
+	return (1);
 }
