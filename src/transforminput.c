@@ -6,7 +6,7 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 19:52:16 by amedvede          #+#    #+#             */
-/*   Updated: 2018/08/15 20:48:31 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/08/15 21:24:20 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Matrix		*allocate_new_line_in_mtrx(Matrix *mtrx, list *l, int row)
 {
 	int linelength;
 
-	linelength = getLineLength(l);
+	linelength = getlinelength(l);
 	mtrx->field[row] = (int *)malloc((sizeof(int) * linelength) + 1);
 	if (l->c == mtrx->obstacle)
 		mtrx->field[row][0] = 0;

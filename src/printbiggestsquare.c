@@ -6,7 +6,7 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 20:50:50 by amedvede          #+#    #+#             */
-/*   Updated: 2018/08/15 20:56:42 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/08/15 21:19:59 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		printbiggestsquare(Matrix *mtrx, Square *sq)
 		i = 0;
 		while (mtrx->field[j][i] != -1)
 		{
-			if (inRange(j, i, sq->row, sq->col, sq->sideSize) == 1)
+			if (inrange(j, i, sq) == 1)
 				put_char(mtrx->full);
 			else
 			{

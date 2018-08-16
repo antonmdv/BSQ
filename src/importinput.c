@@ -6,7 +6,7 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 19:02:15 by amedvede          #+#    #+#             */
-/*   Updated: 2018/08/15 19:30:28 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/08/15 21:08:14 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ list		*importinput(char *file_name)
 		else
 		{
 			if (l == NULL)
-				l = newNodeLines(num);
-			l = insertNodeEnd(buff, l);
+				l = newnodelines(num);
+			l = insertnodeend(buff, l);
 		}
 	}
 	close(fd);

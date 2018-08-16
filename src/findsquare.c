@@ -6,7 +6,7 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 18:37:01 by amedvede          #+#    #+#             */
-/*   Updated: 2018/08/15 19:02:02 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/08/15 21:23:07 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Square		*findsquare(Matrix *mtrx)
 				mtrx->field[j][i] = mtrx->field[j][i];
 			else if (mtrx->field[j][i] != 0)
 			{
-				mtrx->field[j][i] = 1 + getMin(mtrx->field[j][i - 1],
+				mtrx->field[j][i] = 1 + getmin(mtrx->field[j][i - 1],
 						mtrx->field[j - 1][i], mtrx->field[j - 1][i - 1]);
 				if (mtrx->field[j][i] > sq->sideSize)
 					sq = set_new_max(sq, mtrx->field[j][i], i, j);

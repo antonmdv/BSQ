@@ -33,14 +33,14 @@ typedef struct		Square
 list	*importinput(char *file_name);
 void	put_char(char c);
 void	put_str(char *str);
-list	*newNode(char c);
-list	*insertNodeEnd(char c, list *l);
+list	*newnode(char c);
+list	*insertnodeend(char c, list *l);
 Matrix	*transform(list *l);
-int		getLineLength(list *l);
+int		getlinelength(list *l);
 Square	*findsquare(Matrix *mtrx);
-int		getMin(int a, int b, int c);
+int		getmin(int a, int b, int c);
 void	printbiggestsquare(Matrix *mtrx, Square *sq);
-int		inRange(int j, int i, int row, int col, int sideSize);
-list	*newNodeLines(int lines);
+int		inrange(int j, int i, Square *sq);
+list	*newnodelines(int lines);
 void	printfirstoccurence(Matrix *mtrx);
 #endif
