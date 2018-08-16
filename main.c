@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 			if(sq->sideSize == 1)
 				printfirstoccurence(mtrx);
 			else 	
-				printBiggestSquare(mtrx, sq);
+				printbiggestsquare(mtrx, sq);
 			
 			put_char('\n');
 

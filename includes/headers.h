@@ -39,7 +39,7 @@ Matrix	*transform(list *l);
 int		getLineLength(list *l);
 Square	*findsquare(Matrix *mtrx);
 int		getMin(int a, int b, int c);
-void	printBiggestSquare(Matrix *mtrx, Square *sq);
+void	printbiggestsquare(Matrix *mtrx, Square *sq);
 int		inRange(int j, int i, int row, int col, int sideSize);
 list	*newNodeLines(int lines);
 void	printfirstoccurence(Matrix *mtrx);
