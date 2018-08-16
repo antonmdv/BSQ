@@ -12,12 +12,12 @@
 
 #include "headers.h"
 
-int	    mapvalidity(list *l)
+int		mapvalidity(t_list *l)
 {
-    Matrix	*mtrx;
+	t_matrix	*mtrx;
 	int		linelength;
 
-	lineLength = 0;
+	linelength = 0;
 	mtrx = malloc(sizeof(Matrix));
 	mtrx->numOfLines = l->numLines;
 	l = l->next;
