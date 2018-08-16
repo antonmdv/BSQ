@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 			sq = findsquare(mtrx);
 
 			if(sq->sideSize == 1)
-				printFirstOccurence(mtrx);
+				printfirstoccurence(mtrx);
 			else 	
 				printBiggestSquare(mtrx, sq);
 			
