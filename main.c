@@ -12,8 +12,10 @@ int main(int argc, char **argv)
 	{		
 		while(argv[i] != NULL)
 		{
-			input = importInput(argv[i]);
-	
+			input = importinput(argv[i]);
+			
+			//if (input == NULL) print error, move to next file;
+		
 			//Check Validity for if(checkMap(input) == 1)		
 
 			mtrx = transform(input);				

@@ -30,7 +30,7 @@ typedef struct		Square
 	int				sideSize;
 }					Square;
 
-list	*importInput(char *fileName);
+list	*importinput(char *file_name);
 void	put_char(char c);
 void	put_str(char *str);
 list	*newNode(char c);
