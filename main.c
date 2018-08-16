@@ -1,39 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/15 21:27:26 by amedvede          #+#    #+#             */
+/*   Updated: 2018/08/15 21:32:03 by amedvede         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "headers.h"
 
-int main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
-	list *input;
-	Matrix *mtrx;
-	Square *sq;
-	int i = 0;
-	
+	list	*input;
+	Matrix	*mtrx;
+	Square	*sq;
+	int		i;
+
 	i = 1;
 	if (argc >= 2)
-	{		
-		while(argv[i] != NULL)
+	{
+		while (argv[i] != NULL)
 		{
 			input = importinput(argv[i]);
-			
 			//if (input == NULL) print error, move to next file;
-		
-			//Check Validity for if(checkMap(input) == 1)		
-
-			mtrx = transform(input);				
-		
+			//Check Validity for if(checkMap(input) == 1)
+			mtrx = transform(input);
 			sq = findsquare(mtrx);
-
-			if(sq->sideSize == 1)
+			if (sq->sideSize == 1)
 				printfirstoccurence(mtrx);
-			else 	
+			else
 				printbiggestsquare(mtrx, sq);
-			
 			put_char('\n');
-
 			i++;
 		}
 	}
 	else
 		put_str("Invslid number or files\n");
-	
-	return (0);	
+	return (0);
 }
