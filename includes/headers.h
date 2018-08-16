@@ -44,7 +44,7 @@ Square	*findSquare(Matrix *mtrx);
 int		getMin(int a, int b, int c);
 char	**transformToRegular(list *l);
 void	printCharField(char **field);
-void	printBiggestSquare(int **field, Square *sq);
+void	printBiggestSquare(Matrix *mtrx, Square *sq);
 int		inRange(int j, int i, int row, int col, int sideSize);
 list	*newNodeLines(int lines);
 #endif

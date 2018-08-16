@@ -26,8 +26,6 @@ list *importInput(char *fileName)
 		{
 			num *= 10;
 			num +=(buff-48);
-			//printf("\nbuff=%c\n",buff);
-			//printf("\n\nNumLines=>%d \n\n",num);
 		}
 		else
 		{
@@ -36,7 +34,6 @@ list *importInput(char *fileName)
 			l = insertNodeEnd(buff,l);		
 		}
 	}
-	//printList(l);
 	close(fd);
 	return (l);
 }

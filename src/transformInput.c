@@ -20,23 +20,15 @@ Matrix *transform(list *l)
 	l = l->next;
 	mtrx->full = l->c;
 	l = l->next;
-	//l = l->next;
-	
-		
-	printf("\n\nNum of Line=> %d, emptyChar=> %c, obstcle=> %c, full=> %c\n\n", mtrx->numOfLines, mtrx->emptyChar, mtrx->obstacle, mtrx->full);
-	
 	
 	field = (int **)malloc((sizeof(int **) * mtrx->numOfLines)+1);	
 	field[mtrx->numOfLines] = NULL;
 	
-	//printf("\n\nChec 1\n\n");
 	
 	while (l->next)
 	{	
-		//printf("%c", l->c);
 		if(l->c == '\n')
 		{
-			//printf("\n");
 			l = l->next;
 			col = 0;
 			row++;
@@ -46,30 +38,21 @@ Matrix *transform(list *l)
 			if(l->c == mtrx->obstacle)
 				field[row][col] = 0;
 			else
-				field[row][col] = 1;
-			//printf("%d ", field[row][col]);				
+				field[row][col] = 1;				
 			field[row][lineLength] = -1;
-		   	
 		}
-
 		else
 		{
-
 			col++;
 			if(l->c == mtrx->obstacle)
-                                field[row][col] = 0;
-                        else
-                                field[row][col] = 1;
-			//printf("%d ",field[row][col]);
+				field[row][col] = 0;
+            else
+				field[row][col] = 1;
 		}
 		
 		l = l->next;					
 	}
 	
 	mtrx->field = field;
-	/*
-	printf("\n\nDone Filling\n\n");	
-	//printMatrix(field);
-	*/
 	return (mtrx);
 }

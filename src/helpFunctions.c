@@ -50,7 +50,7 @@ list *insertNodeEnd(char c, list *l)
 
 	return (tmp);
 }
-
+/*
 void printList(list *l)
 {
 	printf("%d",l->numLines);
@@ -62,6 +62,7 @@ void printList(list *l)
 	}
 	//put_char(l->c);
 }
+*/
 
 int getLineLength(list *l)
 {
@@ -73,7 +74,7 @@ int getLineLength(list *l)
 	}
 	return (i);	
 }
-
+/*
 void printMatrix(int **field)
 {
 	int i;
@@ -91,6 +92,7 @@ void printMatrix(int **field)
 		j++;
 	}
 }
+*/
 
 int getMin(int a, int  b, int c)
 {
@@ -101,7 +103,7 @@ int getMin(int a, int  b, int c)
 		min = c;
 	return min;		
 }
-
+/*
 void printCharField(char **field)
 {
 	int i;
@@ -119,7 +121,7 @@ void printCharField(char **field)
                 j++;
         }
 }
-
+*/
 int	inRange(int j, int i, int row, int col, int sideSize)
 {
 	int flag = 0;

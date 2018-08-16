@@ -1,37 +1,43 @@
 #include "headers.h"
 
-void printBiggestSquare(int **field, Square *sq)
+void printBiggestSquare(Matrix *mtrx, Square *sq)
 {
 	int row = sq->row;
 	int col = sq->col;
 	int sideSize = sq->sideSize;
 	
-	/*
-	row = 0;
-	col = 0;
-	sideSize = 0;
-	*/
-
-
 
 	int i;
     int j = 0;
 
-        while (field[j] != NULL)
+        while (mtrx->field[j] != NULL)
         {
                 i = 0;
-                while(field[j][i] != -1)
+                while(mtrx->field[j][i] != -1)
                 {
 					if(inRange(j, i, row, col, sideSize) == 1)
-						printf("x");
+					{	
+						//printf("%c",mtrx->full);
+						put_char(mtrx->full);
+					}
 					else
-						if(field[j][i] == 0)
-							printf("o");
+					{
+						if(mtrx->field[j][i] == 0)
+						{	
+							//printf("%c", mtrx->obstacle);
+							put_char(mtrx->obstacle);
+						}
 						else
-                        	printf(".");
-                        i++;
+						{
+                        	//printf("%c", mtrx->emptyChar);
+                   			put_char(mtrx->emptyChar);
+						}
+					 }
+						i++;
                 }
-                printf("\n");
-                j++;
+
+                //printf("\n");
+                put_char('\n');
+				j++;
         }
 }
