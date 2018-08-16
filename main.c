@@ -6,17 +6,28 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 21:27:26 by amedvede          #+#    #+#             */
-/*   Updated: 2018/08/15 22:12:32 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/08/15 22:27:32 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers.h"
 
+void		ifmapvalid(list *l)
+{
+	Matrix *mtrx;
+	Square *sq;
+
+	mtrx = transform(l);
+	sq = findsquare(mtrx);
+	if (sq->sideSize == 1 || sq->sideSize == 0)
+		printfirstoccurence(mtrx);
+	else
+		printbiggestsquare(mtrx, sq);
+}
+
 int			main(int argc, char **argv)
 {
 	list	*input;
-	Matrix	*mtrx;
-	Square	*sq;
 	int		i;
 
 	i = 1;
@@ -25,23 +36,12 @@ int			main(int argc, char **argv)
 		while (argv[i] != NULL)
 		{
 			input = importinput(argv[i]);
-			//if (input == NULL) print error, move to next file;
-			if(input == NULL)
-			{
+			if (input == NULL)
 				put_str("map error\n");
-			}
 			else
 			{
-				//Check Validity for if(checkMap(input) == 1)
-				if(mapvalidity(input) == 1)
-				{
-					mtrx = transform(input);
-					sq = findsquare(mtrx);
-					if (sq->sideSize == 1 || sq->sideSize == 0)
-						printfirstoccurence(mtrx);
-					else
-						printbiggestsquare(mtrx, sq);
-				}
+				if (mapvalidity(input) == 1)
+					ifmapvalid(input);
 				else
 					put_str("map error\n");
 			}
